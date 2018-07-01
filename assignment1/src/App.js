@@ -20,13 +20,13 @@ class App extends Component {
     ]
   });
 }
-setUserOutputHandler=(username)=>{
+setUserOutputHandler=(event)=>{
   console.log("this.setUserOutputHandler");
   this.setState({//this.setState
     userdetails:[
-      {username: username},
-      {username: username},
-      {username: username}
+      {username: event.target.value},
+      {username: event.target.value},
+      {username: event.target.value}
     ]
   });
 }
@@ -47,7 +47,7 @@ render() {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <UserInput click={this.changeStateHandler} style={style}></UserInput>
-        <UserInput click={this.setUserOutputHandler.bind(this)} ></UserInput>
+        <UserInput click={this.setUserOutputHandler} ></UserInput>
         <button onClick={this.changeStateHandler}>Change State</button>
         <UserOutput username={this.state.userdetails[0].username}></UserOutput>
         <UserOutput username={this.state.userdetails[1].username}></UserOutput>
